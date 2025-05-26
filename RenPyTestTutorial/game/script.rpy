@@ -2,7 +2,6 @@
 
 # Определение персонажей игры.
 define e = Character('Эйлин', color="#c8ffc8")
-
 # Вместо использования оператора image можете просто
 # складывать все ваши файлы изображений в папку images.
 # Например, сцену bg room можно вызвать файлом "bg room.png",
@@ -10,13 +9,22 @@ define e = Character('Эйлин', color="#c8ffc8")
 
 # Игра начинается здесь:
 label start:
+    "Ой.... Опять вставать на работу /n может нафиг оно  надо?"
+    scene bg street
+    show nemo at center with dissolve
 
-    scene bg room
+    menu:
+        e "Марина! Доброе утро!"
+        "Пошел в жопу!":
+            jump label_name1
+        "Доброе утрО!":
+            jump label_name2
 
-    show eileen happy
-
-    e "Вы создали новую игру Ren'Py."
-
-    e "Добавьте сюжет, изображения и музыку и отправьте её в мир!"
+label label_name1:
+    e "Сама иди в жопу!"
+    return
+label label_name2:
+    e "Выспалась?"
+    return
 
     return

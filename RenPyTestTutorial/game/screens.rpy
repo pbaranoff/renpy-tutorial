@@ -4,6 +4,16 @@
 
 init offset = -1
 
+################################################################################
+## Задаю размер под мобильные устройства
+################################################################################
+# if renpy.android:
+#     $ config.screen_width = 1080
+#     $ config.screen_height = 1920
+
+define config.screen_width = 1080
+define config.screen_height = 1920
+
 
 ################################################################################
 ## Стили
@@ -105,6 +115,7 @@ screen say(who, what):
                 id "namebox"
                 style "namebox"
                 text who id "who"
+                
 
         text what id "what"
 
@@ -1435,6 +1446,7 @@ screen bubble(who, what):
 
         text what:
             id "what"
+            xalign 0.3
 
 style bubble_window is empty
 style bubble_namebox is empty
